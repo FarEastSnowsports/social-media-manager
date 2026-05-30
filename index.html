@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Media Manager — Far East Snowsports · Niseko</title>
+<meta name="description" content="Far East Snowsports is hiring a Social Media Manager in Niseko. Own how we show up online, get up the mountain to film the real thing, and grow into much more. Start 1 August.">
+
+<!-- Open Graph / social preview (so the link looks right when shared from a post) -->
+<meta property="og:title" content="Social Media Manager — Far East Snowsports · Niseko">
+<meta property="og:description" content="Own how Far East shows up online, and grow into much more. Niseko, on snow. Start 1 August.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="hero.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d2240;
+    --mid-navy: #1a3a5c;
+    --gold: #c9a84c;
+    --light: #f4f6f9;
+    --white: #ffffff;
+    --text: #1c1c1e;
+    --muted: #5a6475;
+    --border: #dde3ec;
+    --radius: 10px;
+    --max: 860px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--light);
+    padding-top: 52px;
+  }
+
+  /* ── Sticky Nav ── */
+  .sticky-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--navy);
+    border-bottom: 1px solid rgba(201,168,76,0.25);
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.25rem;
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .nav-links {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-left: 1.5rem;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a {
+    position: relative;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.35rem 0.7rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    transition: color 0.15s, background 0.15s;
+  }
+  .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+  .nav-links a.active { color: var(--gold); }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 50%; right: 50%;
+    height: 2px;
+    background: var(--gold);
+    transition: left 0.2s ease, right 0.2s ease;
+  }
+  .nav-links a:hover::after { left: 0.5rem; right: 0.5rem; }
+
+  .nav-apply {
+    flex-shrink: 0;
+    margin-left: 1rem;
+    background: var(--gold);
+    color: var(--navy) !important;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 5px;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+  }
+  .nav-apply:hover { opacity: 0.88; }
+
+  /* Hamburger — mobile only */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    margin-left: auto;
+    background: none;
+    border: none;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 22px; height: 2px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile dropdown */
+  .nav-drawer {
+    display: none;
+    position: fixed;
+    top: 52px; left: 0; right: 0;
+    z-index: 99;
+    background: var(--navy);
+    border-bottom: 2px solid var(--gold);
+    padding: 0.5rem 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .nav-drawer.open { display: block; }
+  .nav-drawer a {
+    display: block;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    transition: color 0.15s, padding-left 0.15s;
+  }
+  .nav-drawer a:last-child { border-bottom: none; }
+  .nav-drawer a:hover { color: var(--gold); padding-left: 1.85rem; }
+
+  @media (max-width: 700px) {
+    .nav-links, .nav-apply { display: none; }
+    .nav-hamburger { display: flex; }
+  }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+    background: var(--navy);
+  }
+  .hero img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    opacity: 0.62;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to bottom, rgba(13,34,64,0.25) 0%, rgba(13,34,64,0.88) 100%);
+  }
+  .hero-logo img { height: 32px; filter: brightness(0) invert(1); opacity: 0.92; display: block; margin: 0 auto; }
+  .hero-eyebrow {
+    margin-top: 1.1rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .hero-divider {
+    width: 36px; height: 2px;
+    background: var(--gold);
+    margin: 0.9rem auto 1.25rem;
+    opacity: 0.9;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.05;
+    max-width: 720px;
+    letter-spacing: -0.02em;
+  }
+  .hero-sub {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 540px;
+    line-height: 1.6;
+  }
+  .hero-tagline {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 0.3rem 0.85rem;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+  .hero-tag:hover {
+    color: rgba(255,255,255,0.95);
+    border-color: rgba(201,168,76,0.6);
+    background: rgba(201,168,76,0.12);
+  }
+  .hero-cta {
+    margin-top: 1.9rem;
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    padding: 0.85rem 2.2rem;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.35); }
+
+  /* ── Layout ── */
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  /* ── Intro ── */
+  .intro {
+    background: var(--white);
+    border-left: 4px solid var(--gold);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 3rem;
+    color: var(--text);
+    font-size: 1.02rem;
+  }
+
+  /* ── Section ── */
+  section { margin-bottom: 3.25rem; scroll-margin-top: 68px; }
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+  h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
+  }
+  h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin: 1.5rem 0 0.6rem; }
+  p { margin-bottom: 0.9rem; }
+  a.inline { color: var(--navy); font-weight: 600; }
+
+  /* ── Card ── */
+  .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(13,34,64,0.10); }
+  .card-navy { background: var(--navy); color: var(--white); border: none; }
+  .card-navy h3 { color: var(--gold); margin-top: 0; }
+  .card-navy p, .card-navy li { color: rgba(255,255,255,0.85); }
+
+  /* ── Pillars ── */
+  .pillars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.25rem 0; }
+  .pillar {
+    background: var(--navy);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.35rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .pillar:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(13,34,64,0.18); }
+  .pillar-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+  .pillar-title { font-size: 0.98rem; font-weight: 700; color: var(--white); margin-bottom: 0.3rem; }
+  .pillar-desc { font-size: 0.85rem; color: rgba(255,255,255,0.72); line-height: 1.55; }
+
+  /* ── Grow-into list ── */
+  .grow-list { list-style: none; padding: 0; margin: 1rem 0; }
+  .grow-list li {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+  }
+
+  /* ── Pay rate cards ── */
+  .rate-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.25rem 0; }
+  .rate-card {
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+    text-align: center;
+    border: 2px solid var(--border);
+    background: var(--white);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .rate-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(13,34,64,0.10); }
+  .rate-card.highlight { border-color: var(--gold); background: #fdf9ef; }
+  .rate-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+  .rate-num { font-size: 2.4rem; font-weight: 900; color: var(--navy); line-height: 1; }
+  .rate-num span { font-size: 1.2rem; font-weight: 700; }
+  .rate-card.highlight .rate-num { color: var(--gold); }
+  .rate-desc { font-size: 0.8rem; color: var(--muted); margin-top: 0.55rem; line-height: 1.45; }
+  .pay-note { font-size: 0.85rem; color: var(--muted); }
+
+  /* ── Deal facts ── */
+  .deal-facts { list-style: none; padding: 0; margin: 0; }
+  .deal-facts li { display: flex; gap: 0.8rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+  .deal-facts li:last-child { border-bottom: none; }
+  .deal-facts .k { flex: 0 0 8rem; font-weight: 700; color: var(--navy); }
+  .deal-facts .v { color: var(--text); }
+
+  /* ── Timeline ── */
+  .timeline { position: relative; padding-left: 1.8rem; margin: 1.1rem 0 0.3rem; }
+  .timeline::before {
+    content: ""; position: absolute; left: 0.55rem; top: 0.4rem; bottom: 0.4rem;
+    width: 2px; background: var(--border);
+  }
+  .tl-item { position: relative; margin-bottom: 1.1rem; }
+  .tl-item::before {
+    content: ""; position: absolute; left: -1.3rem; top: 0.45rem;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--gold); border: 2px solid var(--white); box-shadow: 0 0 0 2px var(--gold);
+  }
+  .tl-date { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); }
+  .tl-desc { font-size: 0.92rem; color: var(--text); }
+
+  /* ── Perks grid ── */
+  .perks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1rem 0; }
+  .perk {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+  }
+  .perk h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.25rem; }
+  .perk p { font-size: 0.85rem; color: var(--muted); margin: 0; line-height: 1.5; }
+
+  /* ── Lists ── */
+  ul, ol { padding-left: 1.3rem; margin-bottom: 0.9rem; }
+  li { margin-bottom: 0.35rem; }
+
+  /* ── CTA block ── */
+  .cta-block {
+    background: var(--navy);
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+  .cta-block h3 { color: var(--white); font-size: 1.5rem; margin: 0 0 0.5rem; }
+  .cta-block p { color: rgba(255,255,255,0.7); font-size: 0.95rem; max-width: 460px; margin: 0 auto 1.5rem; }
+  .cta-button {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    padding: 0.95rem 2.6rem;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .cta-button:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.3); }
+  .cta-fineprint { margin-top: 1rem; font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+
+  /* ── FAQ ── */
+  details {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+  details > summary {
+    list-style: none;
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--navy);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  details > summary::after { content: "+"; font-size: 1.3rem; font-weight: 400; color: var(--gold); flex-shrink: 0; margin-left: 1rem; }
+  details[open] > summary::after { content: "\2212"; }
+  details > summary::-webkit-details-marker { display: none; }
+  .faq-answer { padding: 0 1.25rem 1rem; font-size: 0.92rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 0.75rem; }
+
+  /* ── Footer ── */
+  .footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 2.5rem 1.5rem;
+  }
+  .footer-badges { display: flex; gap: 1.25rem; justify-content: center; margin-bottom: 1.5rem; }
+  .footer-badge { width: 38px; height: 38px; border-radius: 50%; background: #003060; display: flex; align-items: center; justify-content: center; transition: transform 0.2s, background 0.2s; }
+  .footer-badge:hover { transform: translateY(-2px); background: var(--gold); }
+  .footer-badge:hover svg { fill: var(--navy); stroke: var(--navy); }
+  .footer-links { margin-bottom: 1.25rem; }
+  .footer-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.82rem; margin: 0 0.6rem; }
+  .footer-links a:hover { color: var(--gold); }
+  .footer strong { color: var(--gold); }
+
+  /* ── Scroll-reveal ── */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .hero { height: 440px; }
+    .hero h1 { font-size: 2.1rem; }
+    .hero-sub { font-size: 0.92rem; }
+    .pillars, .rate-cards, .perks-grid { grid-template-columns: 1fr; }
+    .container { padding: 2rem 1.1rem 4rem; }
+    .deal-facts li { flex-direction: column; gap: 0.1rem; }
+    .deal-facts .k { flex-basis: auto; }
+    .cta-block { padding: 2rem 1.25rem; }
+    .cta-block h3 { font-size: 1.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ──────────────── STICKY NAV ──────────────── -->
+<nav class="sticky-nav">
+  <div class="nav-brand">
+    <img src="fes-logo.png" alt="Far East Snowsports" style="height:22px; filter:brightness(0) invert(1); vertical-align:middle; margin-right:0.55rem; opacity:0.9;">
+    <span>Social Media Manager</span>
+  </div>
+  <div class="nav-links">
+    <a href="#why">Why</a>
+    <a href="#role">The Role</a>
+    <a href="#you">You</a>
+    <a href="#apply">The Deal</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="#apply" class="nav-apply">Apply</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-drawer" id="navDrawer">
+  <a href="#why" class="drawer-link">Why this exists</a>
+  <a href="#role" class="drawer-link">The Role</a>
+  <a href="#you" class="drawer-link">What you bring</a>
+  <a href="#apply" class="drawer-link">The Deal &amp; Apply</a>
+  <a href="#faq" class="drawer-link">FAQ</a>
+</div>
+
+<!-- ──────────────── HERO ──────────────── -->
+<div class="hero">
+  <img src="hero.jpg" alt="Far East Snowsports instructor in the Niseko backcountry">
+  <div class="hero-overlay">
+    <div class="hero-logo">
+      <img src="fes-logo.png" alt="Far East Snowsports">
+    </div>
+    <div class="hero-eyebrow">Far East Snowsports · Niseko</div>
+    <div class="hero-divider"></div>
+    <h1>Social Media Manager</h1>
+    <p class="hero-sub">Own how Far East shows up online, and grow into much more than that. Niseko, on snow. Start 1 August.</p>
+    <div class="hero-tagline">
+      <span class="hero-tag">On snow</span>
+      <span class="hero-tag">Contractor</span>
+      <span class="hero-tag">Long game</span>
+    </div>
+    <a href="#apply" class="hero-cta">See the deal &amp; apply</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <p class="intro reveal">
+    We're after someone to run our social, and grow into a space much more than that. If you've found your way here from one of our posts and the tone landed, that's a promising sign. This is the full picture: what the job actually is, who we're looking for, and the deal on the table.
+  </p>
+
+  <!-- ──────────────── WHY ──────────────── -->
+  <section id="why" class="reveal">
+    <div class="section-label">Why this exists</div>
+    <h2>What we're actually doing</h2>
+    <p>We do this so people can enjoy snowsports for the next 50 to 100 years, and beyond. That means treating snowsports instructing as a real job, helping the snow keep falling, looking after the community we live in, and bringing the next generation through.</p>
+    <p>Everything we post should carry a bit of that weight. The feed isn't a highlight reel. It's how a small school in Niseko tells a long story, season after season, to the people who'll care about it.</p>
+    <div class="card card-navy">
+      <h3>Read these before you apply</h3>
+      <p style="margin-bottom:0.6rem;">They tell you more about us than any job advert can.</p>
+      <p style="margin-bottom:0.4rem;">&bull; What we actually believe: <a href="https://fareastsnowsports.com/en/philosophy/" target="_blank" style="color:var(--gold); font-weight:600;">fareastsnowsports.com/en/philosophy</a></p>
+      <p style="margin-bottom:0;">&bull; What we value and how we hire: <a href="https://fareastsnowsports.com/en/recruitment/" target="_blank" style="color:var(--gold); font-weight:600;">fareastsnowsports.com/en/recruitment</a></p>
+    </div>
+  </section>
+
+  <!-- ──────────────── THE ROLE ──────────────── -->
+  <section id="role" class="reveal">
+    <div class="section-label">The job, honestly</div>
+    <h2>What you'd actually do</h2>
+    <p>You'll own how Far East shows up online. Some days that's a content calendar and a caption that genuinely sounds like us. Other days it's clicking into your boots to film a lesson on a powder morning, because the best content out here doesn't come from behind a desk.</p>
+    <p>You'll plan, create, schedule and publish across <strong>Instagram, Facebook and Rednote</strong>, keep the community talking in our voice, and tell us each month what's working and what isn't.</p>
+    <div class="card">
+      <h3 style="margin-top:0;">The shape we'd love</h3>
+      <p style="margin-bottom:0;">The ideal person runs our social and can teach on snow through the busy weeks. If that's you, even better. If it isn't, that's a conversation, not a dealbreaker.</p>
+    </div>
+  </section>
+
+  <!-- ──────────────── YOU ──────────────── -->
+  <section id="you" class="reveal">
+    <div class="section-label">What you bring &amp; grow into</div>
+    <h2>Who we're looking for</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">You feel our voice</div>
+        <div class="pillar-desc">Specific, warm, no hype, but fun, playful and witty. If you got this far and the tone landed, that's a promising sign.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">Real hands-on experience</div>
+        <div class="pillar-desc">Some genuine social experience already, and the appetite to own the rest.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">You can get up the mountain</div>
+        <div class="pillar-desc">Ski or ride well enough to get up there and catch the real thing on camera.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">04</div>
+        <div class="pillar-title">In it for the long game</div>
+        <div class="pillar-desc">You take ownership, you finish what you start, and you're thinking in seasons, not weeks.</div>
+      </div>
+    </div>
+
+    <h3>What you'll grow into</h3>
+    <p>We don't expect all of this on day one. We also don't expect you to coast. Over the season you'll pick up:</p>
+    <ul class="grow-list">
+      <li>Paid advertising across platforms, not just Meta</li>
+      <li>Performance analytics and benchmarking</li>
+      <li>Scheduling and analytics tools (Hootsuite or similar)</li>
+      <li>Sharper photo and video editing</li>
+    </ul>
+    <p>If your default setting is "haven't done that yet, but I'll work it out", you'll fit right in. That stretch is the job. It's where the growth lives.</p>
+  </section>
+
+  <!-- ──────────────── THE DEAL + APPLY ──────────────── -->
+  <section id="apply" class="reveal">
+    <div class="section-label">The practical bits</div>
+    <h2>The deal</h2>
+    <p>Based in Niseko, on snow. English. Start date <strong>1 August</strong>. Here's how the engagement works and what's on the table.</p>
+
+    <div class="card">
+      <h3 style="margin-top:0;">How we work</h3>
+      <p style="margin-bottom:0;">Everyone at Far East works as a contractor (業務委託), not an employee. Social and instructing together is our default shape, but the exact blend is a conversation, not a fixed box. Tell us what shape works for you.</p>
+    </div>
+
+    <h3>Sample pay</h3>
+    <div class="rate-cards">
+      <div class="rate-card">
+        <div class="rate-label">Monthly base</div>
+        <div class="rate-num"><span>from ¥</span>50,000</div>
+        <div class="rate-desc">Fixed monthly retainer for the social work.</div>
+      </div>
+      <div class="rate-card highlight">
+        <div class="rate-label">Performance</div>
+        <div class="rate-num"><span>up to ¥</span>50,000</div>
+        <div class="rate-desc">Earned on top, tied to how the channels perform.</div>
+      </div>
+    </div>
+    <p class="pay-note">A starting structure for the trial period, tax included. It grows from there as the role and the results do. If you also teach on snow, instructing days are agreed and paid separately at our standard instructor rates.</p>
+
+    <h3>The term</h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">1 August 2026</div>
+        <div class="tl-desc">Start. You're in.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">August to October 2026</div>
+        <div class="tl-desc">Three-month trial. We both find out if it fits.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">November 2026 to end of August 2027</div>
+        <div class="tl-desc">First full term, through the winter season and beyond.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">From September 2027</div>
+        <div class="tl-desc">Renews in 12-month terms. The longer you stay, the more it's worth.</div>
+      </div>
+    </div>
+
+    <h3>What comes with it</h3>
+    <div class="perks-grid">
+      <div class="perk">
+        <h4>Pro-deals</h4>
+        <p>Access to our pro-deal pricing on gear and apparel.</p>
+      </div>
+      <div class="perk">
+        <h4>Season mountain access</h4>
+        <p>On the hill all winter, which is also where the content lives.</p>
+      </div>
+      <div class="perk">
+        <h4>Accommodation support</h4>
+        <p>Priority on staff housing to help you land in Niseko.</p>
+      </div>
+      <div class="perk">
+        <h4>Training &amp; development</h4>
+        <p>The paid-ads and analytics growth path, plus our wider support programme.</p>
+      </div>
+    </div>
+
+    <div class="cta-block">
+      <h3>Keen? We'd like to hear from you.</h3>
+      <p>Tell us who you are, show us something you've made, and write us one caption that sounds like Far East. That's the whole test.</p>
+      <a href="https://form.jotform.com/261495879096073" class="cta-button" target="_blank" rel="noopener">Apply now</a>
+      <div class="cta-fineprint">Takes about ten minutes. Applications reviewed on a rolling basis through July.</div>
+    </div>
+  </section>
+
+  <!-- ──────────────── FAQ ──────────────── -->
+  <section id="faq" class="reveal">
+    <div class="section-label">A few quick answers</div>
+    <h2>FAQ</h2>
+
+    <details>
+      <summary>Do I have to be a strong skier or rider?</summary>
+      <div class="faq-answer">No need to be a pro. You need to ski or ride well enough to get up the mountain comfortably and film the real thing without it being a mission. If you can do that, you're good.</div>
+    </details>
+    <details>
+      <summary>Do I have to teach as well?</summary>
+      <div class="faq-answer">Our favourite version of this role runs the social and teaches through the busy weeks, but it isn't a hard requirement. If you can teach, the blend (and the extra instructing income) is a conversation. If you can't, we still want to talk.</div>
+    </details>
+    <details>
+      <summary>Can I do this remotely?</summary>
+      <div class="faq-answer">No. The whole point is that the best content comes from being here, on snow, with the team. This role is based in Niseko.</div>
+    </details>
+    <details>
+      <summary>What does the three-month trial involve?</summary>
+      <div class="faq-answer">A real run at the job from 1 August, paid at the starting rate, so we both find out whether it fits before committing to the full term. No surprises either way.</div>
+    </details>
+    <details>
+      <summary>I haven't done paid ads or analytics before. Is that a problem?</summary>
+      <div class="faq-answer">Not at all. Those are things you'll grow into over the season. We're looking for someone whose instinct is "haven't done that yet, but I'll work it out".</div>
+    </details>
+  </section>
+
+</div>
+
+<!-- ──────────────── FOOTER ──────────────── -->
+<div class="footer">
+  <div class="footer-badges">
+    <a class="footer-badge" href="https://www.instagram.com/far_east_snowsports/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#fffff9"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>
+    </a>
+    <a class="footer-badge" href="https://www.facebook.com/fareastsnowsports" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#fffff9"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+    </a>
+    <a class="footer-badge" href="https://fareastsnowsports.com/en/" target="_blank" rel="noopener" aria-label="Website">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fffff9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    </a>
+  </div>
+  <div class="footer-links">
+    <a href="https://fareastsnowsports.com/en/" target="_blank" rel="noopener">Website</a>
+    <a href="https://fareastsnowsports.com/en/philosophy/" target="_blank" rel="noopener">Philosophy</a>
+    <a href="https://fareastsnowsports.com/en/recruitment/" target="_blank" rel="noopener">Recruitment</a>
+  </div>
+  <p><strong>Far East Snowsports</strong> &nbsp;·&nbsp; Niseko, Hokkaido</p>
+</div>
+
+<script>
+  // ── Mobile drawer ──
+  const hamburger = document.getElementById('hamburger');
+  const drawer = document.getElementById('navDrawer');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    drawer.classList.toggle('open');
+  });
+  document.querySelectorAll('.drawer-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      drawer.classList.remove('open');
+    });
+  });
+
+  // ── Active section highlight (desktop nav) ──
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -75% 0px' });
+  document.querySelectorAll('section[id]').forEach(s => spy.observe(s));
+
+  // ── Scroll reveal ──
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  reveals.forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>
