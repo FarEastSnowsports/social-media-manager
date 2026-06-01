@@ -410,6 +410,8 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   .section-photo:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(13,34,64,0.12); }
+  .photo-caption { text-align: center; font-size: 0.92rem; font-weight: 600; color: var(--muted); margin: 0.7rem 0 0; }
+  .photo-caption .pin { color: var(--gold); }
 
   /* ── CTA block ── */
   .cta-block {
@@ -711,12 +713,11 @@
 <!-- ──────────────── PAULA HANDOFF ──────────────── -->
 <div class="band band-alt">
   <div class="band-inner">
-    <blockquote class="quote-block reveal">
-      <!-- To add Paula's photo: <img class="quote-photo" src="paula.jpg" alt="Paula"> -->
-      <div>
-        <p class="quote-text">"FES socials has been my baby for three years. To keep it growing, it needs someone on the spot, catching the pow turns, the team trips, the moments as they happen. If that sounds like you, I'd love to hand it over."</p>
-        <span class="quote-attr">Paula · outgoing FES social media manager</span>
-      </div>
+    <img class="section-photo reveal" src="paula-team.jpg" loading="lazy" alt="Paula (left) with the FES team in Niseko, holding the Further East magazine">
+    <p class="photo-caption reveal">That's Paula on the left <span class="pin">👈</span> three seasons running this feed, still smiling in a blizzard. Your turn?</p>
+    <blockquote class="quote-block reveal" style="border-left:none; background:transparent; padding:1rem 0 0; display:block; text-align:center;">
+      <p class="quote-text">"FES socials has been my baby for three years. To keep it growing, it needs someone on the spot, catching the pow turns, the team trips, the moments as they happen. If that sounds like you, I'd love to hand it over."</p>
+      <span class="quote-attr">Paula · outgoing FES social media manager</span>
     </blockquote>
   </div>
 </div>
