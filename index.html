@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Social Media Manager — Far East Snowsports · Niseko</title>
+<title>Social Media Manager at Far East Snowsports · Niseko</title>
 <meta name="description" content="Far East Snowsports is hiring a Social Media Manager in Niseko. Own how we show up online, get up the mountain to film the real thing, and grow into much more. Start 1 August.">
 
 <!-- Open Graph / social preview (so the link looks right when shared from a post) -->
-<meta property="og:title" content="Social Media Manager — Far East Snowsports · Niseko">
+<meta property="og:title" content="Social Media Manager at Far East Snowsports · Niseko">
 <meta property="og:description" content="Own how Far East shows up online, and grow into much more. Niseko, on snow. Start 1 August.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="hero.jpg">
@@ -165,6 +165,9 @@
   @media (max-width: 700px) {
     .nav-links, .nav-apply { display: none; }
     .nav-hamburger { display: flex; }
+    .nav-brand span { display: none; }
+    body .sticky-apply { display: flex; }
+    body { padding-bottom: 76px; }
   }
 
   /* ── Hero ── */
@@ -478,18 +481,79 @@
   .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
+  /* ── Full-width section bands ── */
+  .band { padding: 3rem 0; }
+  .band-inner { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+  .band-alt { background: var(--white); }
+
+  /* ── At a glance ── */
+  .band-glance { background: var(--navy); padding: 1.4rem 0; }
+  .glance { display: flex; flex-wrap: wrap; gap: 0.55rem; justify-content: center; }
+  .glance-item {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(201,168,76,0.35);
+    border-radius: 20px; padding: 0.4rem 0.85rem;
+  }
+  .glance-item strong { color: var(--gold); font-weight: 700; }
+  .glance-feed { text-align: center; margin-top: 0.9rem; }
+  .glance-feed a { color: var(--gold); font-size: 0.82rem; font-weight: 600; text-decoration: none; letter-spacing: 0.02em; }
+  .glance-feed a:hover { text-decoration: underline; }
+
+  /* ── Link buttons ── */
+  .link-btn {
+    display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.85rem;
+    padding: 0.55rem 1.1rem; border-radius: 8px; margin: 0.3rem 0.5rem 0.3rem 0;
+    background: rgba(201,168,76,0.16); border: 1px solid var(--gold); color: var(--gold);
+    transition: background 0.15s;
+  }
+  .link-btn:hover { background: rgba(201,168,76,0.28); }
+
+  /* ── Paula quote ── */
+  .quote-block {
+    background: var(--white); border-left: 4px solid var(--gold);
+    border-radius: var(--radius); padding: 1.5rem 1.75rem;
+    display: flex; gap: 1.25rem; align-items: center; margin: 0;
+  }
+  .quote-photo { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--gold); }
+  .quote-text { font-size: 1.02rem; line-height: 1.6; color: var(--text); font-style: italic; margin: 0 0 0.5rem; }
+  .quote-attr { font-size: 0.82rem; font-weight: 700; color: var(--navy); font-style: normal; }
+
+  /* ── Sticky mobile apply bar ── */
+  .sticky-apply {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+    display: none; align-items: center; justify-content: space-between; gap: 0.75rem;
+    background: rgba(13,34,64,0.97); border-top: 1px solid rgba(201,168,76,0.35);
+    padding: 0.65rem 1rem;
+  }
+  .sticky-apply .sa-label { color: rgba(255,255,255,0.85); font-size: 0.82rem; font-weight: 700; line-height: 1.2; }
+  .sticky-apply .sa-label small { display: block; color: rgba(255,255,255,0.5); font-weight: 500; font-size: 0.7rem; }
+  .sticky-apply a {
+    background: var(--gold); color: var(--navy); font-weight: 700; font-size: 0.95rem;
+    padding: 0.7rem 1.6rem; border-radius: 8px; text-decoration: none; white-space: nowrap;
+  }
+
   /* ── Responsive ── */
   @media (max-width: 600px) {
-    .hero { height: 440px; }
+    .hero { height: auto; }
+    .hero img { position: absolute; inset: 0; }
+    .hero-overlay { position: relative; padding: 2.25rem 1.25rem 2.75rem; }
+    .hero-logo { display: none; }
     .hero h1 { font-size: 2.1rem; }
     .hero-sub { font-size: 0.92rem; }
-    .pillars, .rate-cards, .perks-grid { grid-template-columns: 1fr; }
+    .pillars, .perks-grid { grid-template-columns: 1fr; }
+    .rate-num { font-size: 1.7rem; }
+    .rate-num span { font-size: 0.9rem; }
+    .rate-card { padding: 1.1rem 0.7rem; }
     .section-photo { height: 220px; }
-    .container { padding: 2rem 1.1rem 4rem; }
+    .band { padding: 2.25rem 0; }
+    .band-inner { padding: 0 1.1rem; }
     .deal-facts li { flex-direction: column; gap: 0.1rem; }
     .deal-facts .k { flex-basis: auto; }
     .cta-block { padding: 2rem 1.25rem; }
     .cta-block h3 { font-size: 1.3rem; }
+    .quote-block { flex-direction: column; text-align: center; gap: 0.9rem; }
   }
 </style>
 </head>
@@ -542,13 +606,29 @@
   </div>
 </div>
 
-<div class="container">
+<!-- ──────────────── AT A GLANCE ──────────────── -->
+<div class="band band-glance">
+  <div class="band-inner">
+    <div class="glance reveal">
+      <span class="glance-item">📍 Niseko, Japan</span>
+      <span class="glance-item">Start <strong>1 Aug 2026</strong></span>
+      <span class="glance-item">Contractor (業務委託)</span>
+      <span class="glance-item">from <strong>¥50k + ¥50k</strong> / mo</span>
+      <span class="glance-item">Social media <span style="opacity:0.65">(+ optional teaching)</span></span>
+      <span class="glance-item">Rolling through July</span>
+    </div>
+    <div class="glance-feed"><a href="https://www.instagram.com/far_east_snowsports/" target="_blank" rel="noopener">See the feed you'd be running → @far_east_snowsports</a></div>
+  </div>
+</div>
+
+<!-- ──────────────── WHY ──────────────── -->
+<div class="band">
+  <div class="band-inner">
 
   <p class="intro reveal">
-    We're after someone to run our social media, and grow into a space much more than that. If you've found your way here from one of our posts, that's a promising sign. This is the full picture: what the job actually is, who we're looking for, and the deal on the table.
+    Found your way here from one of our posts? Good sign. This is the role Paula has run for three seasons, now opening up. Here's the full picture: what the job is, who we're looking for, and the deal.
   </p>
 
-  <!-- ──────────────── WHY ──────────────── -->
   <section id="why" class="reveal">
     <div class="section-label">Why this exists</div>
     <h2>What we're actually doing</h2>
@@ -557,17 +637,23 @@
     <img class="section-photo reveal" src="team-group.jpg" loading="lazy" alt="Far East Snowsports instructors together on the mountain in Niseko">
     <div class="card card-navy">
       <h3>Read these before you apply</h3>
-      <p style="margin-bottom:0.6rem;">They tell you more about us than any job advert can.</p>
-      <p style="margin-bottom:0.4rem;">&bull; What we actually believe: <a href="https://fareastsnowsports.com/en/philosophy/" target="_blank" style="color:var(--gold); font-weight:600;">fareastsnowsports.com/en/philosophy</a></p>
-      <p style="margin-bottom:0;">&bull; What we value and how we hire: <a href="https://fareastsnowsports.com/en/recruitment/" target="_blank" style="color:var(--gold); font-weight:600;">fareastsnowsports.com/en/recruitment</a></p>
+      <p style="margin-bottom:0.9rem;">They tell you more about us than any job advert can.</p>
+      <a class="link-btn" href="https://fareastsnowsports.com/en/philosophy/" target="_blank" rel="noopener">Our Philosophy →</a>
+      <a class="link-btn" href="https://fareastsnowsports.com/en/recruitment/" target="_blank" rel="noopener">How we hire →</a>
     </div>
   </section>
 
-  <!-- ──────────────── THE ROLE ──────────────── -->
+  </div>
+</div>
+
+<!-- ──────────────── THE ROLE ──────────────── -->
+<div class="band band-alt">
+  <div class="band-inner">
   <section id="role" class="reveal">
     <div class="section-label">The job, honestly</div>
     <h2>What you'd actually do</h2>
-    <p>You'll own how Far East shows up online. Some days that's a content calendar and a caption that genuinely sounds like us. Other days it's clicking into your boots to film a lesson on a powder morning, because the best content out here doesn't come from behind a desk.</p>
+    <p style="font-size:1.12rem; font-weight:600; color:var(--navy); margin-bottom:1rem;">The best content out here doesn't come from behind a desk.</p>
+    <p>You'll own how Far East shows up online. Some days that's a content calendar and a caption that genuinely sounds like us. Other days it's clicking into your boots to film a lesson on a powder morning.</p>
     <p>You'll plan, create, schedule and publish across <strong>Instagram, Facebook and Rednote</strong>, keep our voice consistent so the community comes to recognise it, and tell us each month what's working and what isn't.</p>
     <img class="section-photo reveal" src="action.jpg" loading="lazy" alt="Instructors moving through fresh powder under the gondola on a snowy Niseko morning">
     <div class="card">
@@ -576,7 +662,12 @@
     </div>
   </section>
 
-  <!-- ──────────────── YOU ──────────────── -->
+  </div>
+</div>
+
+<!-- ──────────────── YOU ──────────────── -->
+<div class="band">
+  <div class="band-inner">
   <section id="you" class="reveal">
     <div class="section-label">What you bring &amp; grow into</div>
     <h2>Who we're looking for</h2>
@@ -614,7 +705,25 @@
     <p>If your default setting is "haven't done that yet, but I'll work it out", you'll fit right in. That stretch is the job. It's where the growth lives.</p>
   </section>
 
-  <!-- ──────────────── THE DEAL + APPLY ──────────────── -->
+  </div>
+</div>
+
+<!-- ──────────────── PAULA HANDOFF ──────────────── -->
+<div class="band band-alt">
+  <div class="band-inner">
+    <blockquote class="quote-block reveal">
+      <!-- To add Paula's photo: <img class="quote-photo" src="paula.jpg" alt="Paula"> -->
+      <div>
+        <p class="quote-text">"FES socials has been my baby for three years. To keep it growing, it needs someone on the spot, catching the pow turns, the team trips, the moments as they happen. If that sounds like you, I'd love to hand it over."</p>
+        <span class="quote-attr">Paula · outgoing FES social media manager</span>
+      </div>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ──────────────── THE DEAL + APPLY ──────────────── -->
+<div class="band">
+  <div class="band-inner">
   <section id="apply" class="reveal">
     <div class="section-label">The practical bits</div>
     <h2>The deal</h2>
@@ -690,7 +799,12 @@
     </div>
   </section>
 
-  <!-- ──────────────── FAQ ──────────────── -->
+  </div>
+</div>
+
+<!-- ──────────────── FAQ ──────────────── -->
+<div class="band band-alt">
+  <div class="band-inner">
   <section id="faq" class="reveal">
     <div class="section-label">A few quick answers</div>
     <h2>FAQ</h2>
@@ -717,6 +831,7 @@
     </details>
   </section>
 
+  </div>
 </div>
 
 <!-- ──────────────── FOOTER ──────────────── -->
@@ -738,6 +853,12 @@
     <a href="https://fareastsnowsports.com/en/recruitment/" target="_blank" rel="noopener">Recruitment</a>
   </div>
   <p><strong>Far East Snowsports</strong> &nbsp;·&nbsp; Niseko, Hokkaido</p>
+</div>
+
+<!-- ── Sticky mobile apply bar ── -->
+<div class="sticky-apply">
+  <span class="sa-label">Social Media Manager<small>Niseko · about 10 min to apply</small></span>
+  <a href="https://form.jotform.com/261495879096073" target="_blank" rel="noopener">Apply</a>
 </div>
 
 <script>
