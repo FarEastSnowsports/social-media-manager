@@ -413,6 +413,14 @@
   .photo-caption { text-align: center; font-size: 0.92rem; font-weight: 600; color: var(--muted); margin: 0.7rem 0 0; }
   .photo-caption .pin { color: var(--gold); }
 
+  /* ── Section icons (Approach A) ── */
+  svg.ic { fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .p-ic { width: 30px; height: 30px; margin-bottom: 0.6rem; display: block; }
+  h3.with-ic { display: flex; align-items: center; gap: 0.55rem; }
+  .h-ic { width: 23px; height: 23px; flex-shrink: 0; }
+  .grow-list li { display: flex; align-items: center; gap: 0.75rem; }
+  .g-ic { width: 22px; height: 22px; flex-shrink: 0; }
+
   /* ── CTA block ── */
   .cta-block {
     background: var(--navy);
@@ -668,34 +676,34 @@
     <h2>Who we're looking for</h2>
     <div class="pillars">
       <div class="pillar">
-        <div class="pillar-num">01</div>
+        <svg class="ic p-ic" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
         <div class="pillar-title">You feel our voice</div>
         <div class="pillar-desc">Specific, warm, no hype, but fun, playful and witty. If you got this far, that's a promising sign.</div>
       </div>
       <div class="pillar">
-        <div class="pillar-num">02</div>
+        <svg class="ic p-ic" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
         <div class="pillar-title">Real hands-on experience</div>
         <div class="pillar-desc">Some genuine social media experience already, and the appetite to own the rest.</div>
       </div>
       <div class="pillar">
-        <div class="pillar-num">03</div>
+        <svg class="ic p-ic" viewBox="0 0 24 24"><path d="M3 20l6-11 3.2 5.6L15 9l6 11z"/><circle cx="9" cy="6" r="1.3"/></svg>
         <div class="pillar-title">You can get up the mountain</div>
         <div class="pillar-desc">Ski or ride well enough to get up there and catch the real thing on camera.</div>
       </div>
       <div class="pillar">
-        <div class="pillar-num">04</div>
+        <svg class="ic p-ic" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
         <div class="pillar-title">In it for the long game</div>
         <div class="pillar-desc">You take ownership, you finish what you start, and you're thinking in seasons, not weeks.</div>
       </div>
     </div>
 
-    <h3>What you'll grow into</h3>
+    <h3 class="with-ic"><svg class="ic h-ic" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>What you'll grow into</h3>
     <p>We don't expect all of this on day one. We also don't expect you to coast. Over the season you'll pick up:</p>
     <ul class="grow-list">
-      <li>Paid advertising across platforms, not just Meta</li>
-      <li>Performance analytics and benchmarking</li>
-      <li>Scheduling and analytics tools (Hootsuite or similar)</li>
-      <li>Sharper photo and video editing</li>
+      <li><svg class="ic g-ic" viewBox="0 0 24 24"><path d="M3 11l16-6v14L3 13z"/><path d="M11.5 17.5a3 3 0 0 1-5.5-1.7"/></svg> Paid advertising across platforms, not just Meta</li>
+      <li><svg class="ic g-ic" viewBox="0 0 24 24"><line x1="6" y1="20" x2="6" y2="14"/><line x1="12" y1="20" x2="12" y2="9"/><line x1="18" y1="20" x2="18" y2="4"/></svg> Performance analytics and benchmarking</li>
+      <li><svg class="ic g-ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg> Scheduling and analytics tools (Hootsuite or similar)</li>
+      <li><svg class="ic g-ic" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="7" y1="3" x2="7" y2="21"/><line x1="17" y1="3" x2="17" y2="21"/><line x1="2" y1="12" x2="22" y2="12"/></svg> Sharper photo and video editing</li>
     </ul>
     <p>If your default setting is "haven't done that yet, but I'll work it out", you'll fit right in. That stretch is the job. It's where the growth lives.</p>
   </section>
@@ -724,7 +732,7 @@
     <p>Based in Niseko, on snow. English. Start date <strong>1 August</strong>. Here's how the engagement works and what's on the table.</p>
 
     <div class="card">
-      <h3 style="margin-top:0;">How we work</h3>
+      <h3 class="with-ic" style="margin-top:0;"><svg class="ic h-ic" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 21V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v16"/></svg>How we work</h3>
       <p style="margin-bottom:0;">Everyone at Far East works as a contractor (業務委託), not an employee. Social and instructing together is our default shape, but the exact blend is a conversation, not a fixed box. Tell us what shape works for you.</p>
     </div>
 
@@ -743,7 +751,7 @@
     </div>
     <p class="pay-note">A starting structure for the trial period, tax included. It grows from there as the role and the results do. If you also teach on snow, instructing days are agreed and paid separately at our standard instructor rates.</p>
 
-    <h3>The term</h3>
+    <h3 class="with-ic"><svg class="ic h-ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>The term</h3>
     <div class="timeline">
       <div class="tl-item">
         <div class="tl-date">1 August 2026</div>
@@ -804,24 +812,104 @@
     <h2>FAQ</h2>
 
     <details>
+      <summary>What does a week look like in peak season vs the quiet months?</summary>
+      <div class="faq-answer">Two different rhythms. Through the busy weeks it's fast and on snow: catch the moments as they happen, turn them around, keep the feed alive. In the quieter months it shifts to planning, editing, strategy and the slower-burn projects.</div>
+    </details>
+    <details>
+      <summary>Do I own the content strategy, or follow a set plan?</summary>
+      <div class="faq-answer">You own it. You'll shape the calendar and protect the voice, with us as a sounding board. We're after someone who drives it, not someone waiting for a brief.</div>
+    </details>
+    <details>
+      <summary>What gear do I need, and is any provided?</summary>
+      <div class="faq-answer">A phone that shoots well gets you a long way out here. If you bring a camera and some editing chops, even better. We'll talk through what you have and what you need when you start.</div>
+    </details>
+    <details>
       <summary>Do I have to be a strong skier or rider?</summary>
       <div class="faq-answer">No need to be a pro. You need to ski or ride well enough to get up the mountain comfortably and film the real thing without it being a mission. If you can do that, you're good.</div>
     </details>
     <details>
-      <summary>Do I have to teach as well?</summary>
-      <div class="faq-answer">Our favourite version of this role runs the social media and teaches through the busy weeks, but it isn't a hard requirement. If you can teach, the blend (and the extra instructing income) is a conversation. If you can't, we still want to talk.</div>
+      <summary>Do I run Rednote too? Do I need Mandarin?</summary>
+      <div class="faq-answer">No Mandarin needed. You mirror what you make for Instagram over to Rednote. Same content, second home.</div>
+    </details>
+    <details>
+      <summary>Whose moments can I capture?</summary>
+      <div class="faq-answer">Yours to capture, out on the hill. We also run official shoot sessions through the season, and you can always plan and propose your own ideas. The best ones usually start as "what if we…".</div>
     </details>
     <details>
       <summary>Can I do this remotely?</summary>
       <div class="faq-answer">No. The whole point is that the best content comes from being here, on snow, with the team. This role is based in Niseko.</div>
     </details>
     <details>
+      <summary>Do I have to teach as well?</summary>
+      <div class="faq-answer">Our favourite version of this role runs the social media and teaches through the busy weeks, but it isn't a hard requirement. If you can teach, the blend (and the extra income) is a conversation. If you can't, we still want to talk.</div>
+    </details>
+    <details>
+      <summary>If I'm a qualified instructor, how's the time split between social and teaching?</summary>
+      <div class="faq-answer">There's no fixed ratio. Through the peak weeks you might teach more; around them you run the social. We shape the blend with you. It's a conversation, not a box.</div>
+    </details>
+    <details>
+      <summary>If I instruct too, how am I paid for it?</summary>
+      <div class="faq-answer">Teaching is paid on top, on a separate instructor structure. Social work and instructing are two different things, paid two different ways.</div>
+    </details>
+    <details>
+      <summary>How is the performance pay measured?</summary>
+      <div class="faq-answer">Yes, there's performance pay, and it's based on measures we agree together up front. No vague goalposts.</div>
+    </details>
+    <details>
       <summary>What does the three-month trial involve?</summary>
       <div class="faq-answer">A real run at the job from 1 August, paid at the starting rate, so we both find out whether it fits before committing to the full term. No surprises either way.</div>
     </details>
     <details>
+      <summary>What happens after the first term?</summary>
+      <div class="faq-answer">We're always intending to renew. We believe the longer you run this, the better you understand Far East, and the better the content gets. We want you to stay.</div>
+    </details>
+    <details>
+      <summary>How does pay work through the quiet off-season?</summary>
+      <div class="faq-answer">The social side keeps going, so you keep creating and you keep getting paid. The one thing that's day-by-day is instructing: if you teach, you're paid for the days you teach, not the days you don't.</div>
+    </details>
+    <details>
+      <summary>Do you help with the contractor side (invoicing, Japanese tax)?</summary>
+      <div class="faq-answer">Yes. We run workshops on becoming a sole trader in Japan and help you get invoicing and tax set up. You won't be figuring it out alone.</div>
+    </details>
+    <details>
+      <summary>Do you help with accommodation, and what does it cost?</summary>
+      <div class="faq-answer">Yes. Roughly ¥85,000 to ¥100,000 a month plus utilities, for your own room.</div>
+    </details>
+    <details>
+      <summary>Do I need a car or a licence in Niseko?</summary>
+      <div class="faq-answer">A driver's licence is a must, and having your own car makes life here a lot easier. We also have a company car you may be able to use when it isn't needed for work.</div>
+    </details>
+    <details>
+      <summary>What visa do I need?</summary>
+      <div class="faq-answer">Usually a working holiday visa. Depending on your qualifications and degrees there may be other options, so let's talk it through.</div>
+    </details>
+    <details>
+      <summary>Is a season lift pass included?</summary>
+      <div class="faq-answer">Yes. A season lift pass is included.</div>
+    </details>
+    <details>
+      <summary>When does the season start and end?</summary>
+      <div class="faq-answer">It starts late November and runs to mid or late April, depending how long you want to stay. The one fixed point is staying through our last event, Meet The Team, in early April. After that it's up to you, though spring skiing here is genuinely good, so we'd love you to hang around. If you fancy staying through summer, we have accommodation and a few summer projects quietly in the works.</div>
+    </details>
+    <details>
+      <summary>Do I need to speak Japanese?</summary>
+      <div class="faq-answer">Not to start. It's great if you pick some up along the way, but it isn't a requirement on day one.</div>
+    </details>
+    <details>
+      <summary>Can my partner come to Niseko?</summary>
+      <div class="faq-answer">Yes, your partner is welcome, and we can help them find work. One honest caveat: staff housing priority goes to our team first, not partners, for business reasons. Sorry about that.</div>
+    </details>
+    <details>
       <summary>I haven't done paid ads or analytics before. Is that a problem?</summary>
       <div class="faq-answer">Not at all. Those are things you'll grow into over the season. We're looking for someone whose instinct is "haven't done that yet, but I'll work it out".</div>
+    </details>
+    <details>
+      <summary>Can this grow into a bigger marketing role?</summary>
+      <div class="faq-answer">Yes, and we'd love that. Beyond the feed there's the whole company: relationship events, our printed magazine, merch, the Adventure magazine and bottles, and more in the pipeline. The long game is someone who grows to look after marketing, PR and strategy across all of it, as a proper full-time role. It takes time, and we're honest about that. We're not slotting you into a fixed job; we're looking for someone who paves their own path as their skills grow.</div>
+    </details>
+    <details>
+      <summary>What kind of person thrives at Far East?</summary>
+      <div class="faq-answer">Someone who paves their own path with the tools and education we provide, takes initiative, and acts. We fully back people who take ownership of their own growth. That's who does well here.</div>
     </details>
   </section>
 
