@@ -421,6 +421,22 @@
   .grow-list li { display: flex; align-items: center; gap: 0.75rem; }
   .g-ic { width: 22px; height: 22px; flex-shrink: 0; }
 
+  /* ── Faux Instagram post (Kuma) ── */
+  .ig-post { max-width: 358px; margin: 1.5rem auto 0; background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 6px 22px rgba(13,34,64,0.09); }
+  .ig-head { display: flex; align-items: center; gap: 0.55rem; padding: 0.6rem 0.8rem; }
+  .ig-ava { width: 30px; height: 30px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; color: var(--gold); font-weight: 800; font-size: 0.6rem; letter-spacing: 0.02em; flex-shrink: 0; }
+  .ig-handle { font-size: 0.85rem; font-weight: 700; color: var(--navy); line-height: 1.15; }
+  .ig-loc { font-size: 0.7rem; color: var(--muted); }
+  .ig-dots { margin-left: auto; color: var(--muted); font-weight: 700; letter-spacing: 1.5px; }
+  .ig-photo { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
+  .ig-actions { display: flex; align-items: center; gap: 0.85rem; padding: 0.6rem 0.8rem 0.15rem; }
+  .ig-actions svg { width: 23px; height: 23px; }
+  .ig-actions .ig-save { margin-left: auto; }
+  .ig-likes { padding: 0.1rem 0.8rem 0; font-size: 0.8rem; font-weight: 700; color: var(--navy); }
+  .ig-cap { padding: 0.2rem 0.8rem 0.85rem; font-size: 0.86rem; color: var(--text); line-height: 1.5; }
+  .ig-cap b { color: var(--navy); font-weight: 700; }
+  .ig-tags { color: #3a6ea5; }
+
   /* ── CTA block ── */
   .cta-block {
     background: var(--navy);
@@ -664,9 +680,24 @@
       <h3 style="margin-top:0;">The shape we'd love</h3>
       <p style="margin-bottom:0;">The ideal person runs our social media and can teach on snow through the busy weeks. If that's you, even better. If it isn't, that's a conversation, not a dealbreaker.</p>
     </div>
-    <div class="card" style="display:flex; gap:1.1rem; align-items:center;">
-      <img src="kuma.jpg" alt="Kuma, the Far East Snowsports mascot dog" style="width:88px; height:88px; border-radius:50%; object-fit:cover; border:2px solid var(--gold); flex-shrink:0;">
-      <p style="margin:0;">Oh, and yes: you're allowed to post the dog. Kuma is our mascot, and he's been with us since the day he was born.</p>
+    <div class="ig-post reveal">
+      <div class="ig-head">
+        <div class="ig-ava">FES</div>
+        <div>
+          <div class="ig-handle">far_east_snowsports</div>
+          <div class="ig-loc">Niseko, Hokkaido</div>
+        </div>
+        <span class="ig-dots">•••</span>
+      </div>
+      <img class="ig-photo" src="kuma.jpg" alt="Kuma, the Far East Snowsports mascot dog, in the snow" loading="lazy">
+      <div class="ig-actions">
+        <svg viewBox="0 0 24 24" fill="#ed4956" stroke="#ed4956" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0d2240" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0d2240" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        <svg class="ig-save" viewBox="0 0 24 24" fill="none" stroke="#0d2240" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <div class="ig-likes">Liked by the whole team and everyone who's ever met him</div>
+      <div class="ig-cap"><b>far_east_snowsports</b> Oh, and yes: you're allowed to post the dog. Kuma is our mascot, and he's been with us since the day he was born. <span class="ig-tags">#kuma #fareastsnowsports #niseko</span></div>
     </div>
   </section>
 
