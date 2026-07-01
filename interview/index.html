@@ -97,6 +97,16 @@
   .cycle-note{border:1px solid var(--line);background:var(--paper-2);border-radius:999px;
     padding:.55rem 1.1rem;font-size:.87rem;color:var(--steel)}
   .cycle-note b{color:var(--ink)}
+  .cycle-sub{font-size:.92rem;color:var(--steel);margin-top:.3rem;max-width:52ch}
+  .cycle-legend{display:flex;gap:1.3rem;align-items:center;margin-top:.7rem}
+  .cycle-legend span{display:inline-flex;align-items:center;gap:.45rem;font-size:.8rem;
+    font-weight:700;color:var(--steel);text-transform:uppercase;letter-spacing:.04em}
+  .cycle-legend .sw{width:9px;height:9px;border-radius:50%;display:inline-block}
+  .cycle-legend .sw.a{background:var(--gold-mid)}
+  .cycle-legend .sw.b{background:var(--navy-2)}
+  .cycle-dot.b{background:var(--navy-2);box-shadow:0 0 0 1px var(--navy-2)}
+  .cycle-range.b{background:var(--navy-2)}
+  .cycle-point.b .cycle-day{color:var(--navy-2)}
   @media(max-width:880px){
     .cycle-point{max-width:7rem}
     .cycle-desc{font-size:.8rem}
@@ -369,35 +379,53 @@
   </div>
   <div class="cycle-wrap">
     <div class="glabel">How we work together, month by month</div>
+    <div class="cycle-sub">Two cycles run at once: last month gets reported and paid while next month is already scheduled and locked.</div>
+    <div class="cycle-legend">
+      <span><i class="sw a"></i>This month</span>
+      <span><i class="sw b"></i>Next month</span>
+    </div>
     <div class="cycle-track">
-      <div class="cycle-range" style="left:4%;width:17%"></div>
-      <div class="cycle-dot" style="left:4%"></div>
-      <div class="cycle-point below" style="left:4%">
+      <div class="cycle-range" style="left:3%;width:5%"></div>
+      <div class="cycle-dot" style="left:3%"></div>
+      <div class="cycle-point below" style="left:3%">
         <div class="cycle-day">20th</div>
-        <div class="cycle-desc">Next month scheduled</div>
+        <div class="cycle-desc">Scheduled</div>
       </div>
 
-      <div class="cycle-dot" style="left:21%"></div>
-      <div class="cycle-point above" style="left:21%">
+      <div class="cycle-dot" style="left:8%"></div>
+      <div class="cycle-point above" style="left:8%">
         <div class="cycle-day">+5 days</div>
-        <div class="cycle-desc">We review, then it's locked</div>
+        <div class="cycle-desc">Reviewed, locked</div>
       </div>
 
-      <div class="cycle-range soft" style="left:21%;width:47%"></div>
-      <div class="cycle-dot" style="left:45%"></div>
-      <div class="cycle-point above" style="left:45%">
+      <div class="cycle-range soft" style="left:8%;width:75%"></div>
+      <div class="cycle-dot" style="left:30%"></div>
+      <div class="cycle-point below" style="left:30%">
         <div class="cycle-day">Delivery</div>
-        <div class="cycle-desc">Posts go live through the month</div>
+        <div class="cycle-desc">Posts go live</div>
       </div>
 
-      <div class="cycle-dot" style="left:68%"></div>
-      <div class="cycle-point below" style="left:68%">
+      <div class="cycle-range b" style="left:50%;width:8%"></div>
+      <div class="cycle-dot b" style="left:50%"></div>
+      <div class="cycle-point above b" style="left:50%">
+        <div class="cycle-day">20th</div>
+        <div class="cycle-desc">Scheduled</div>
+      </div>
+
+      <div class="cycle-dot b" style="left:58%"></div>
+      <div class="cycle-point below b" style="left:58%">
+        <div class="cycle-day">+5 days</div>
+        <div class="cycle-desc">Reviewed, locked</div>
+      </div>
+
+      <div class="cycle-dot" style="left:83%"></div>
+      <div class="cycle-point below" style="left:83%">
         <div class="cycle-day">10th</div>
         <div class="cycle-desc">Report submitted</div>
       </div>
 
-      <div class="cycle-dot" style="left:85%"></div>
-      <div class="cycle-point above" style="left:85%">
+      <div class="cycle-dot" style="left:92%"></div>
+      <div class="cycle-point above" style="left:92%">
         <div class="cycle-day">15th</div>
         <div class="cycle-desc">Paid</div>
       </div>
