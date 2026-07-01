@@ -85,6 +85,7 @@
   .cycle-wrap{margin-top:2.6rem;max-width:74rem}
   .cycle-track{position:relative;height:3px;background:var(--line);border-radius:2px;margin:6.4rem 0 3.4rem}
   .cycle-range{position:absolute;top:50%;transform:translateY(-50%);height:3px;background:var(--gold);border-radius:2px}
+  .cycle-range.soft{background:rgba(171,148,83,.32)}
   .cycle-dot{position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:13px;height:13px;
     border-radius:50%;background:var(--gold-mid);border:3px solid var(--paper);box-shadow:0 0 0 1px var(--gold-mid)}
   .cycle-point{position:absolute;left:0;transform:translateX(-50%);width:max-content;max-width:11.5rem;text-align:center}
@@ -382,6 +383,13 @@
         <div class="cycle-desc">We review, then it's locked</div>
       </div>
 
+      <div class="cycle-range soft" style="left:21%;width:47%"></div>
+      <div class="cycle-dot" style="left:45%"></div>
+      <div class="cycle-point above" style="left:45%">
+        <div class="cycle-day">Delivery</div>
+        <div class="cycle-desc">Posts go live through the month</div>
+      </div>
+
       <div class="cycle-dot" style="left:68%"></div>
       <div class="cycle-point below" style="left:68%">
         <div class="cycle-day">10th</div>
@@ -395,7 +403,7 @@
       </div>
     </div>
     <div class="cycle-notes">
-      <div class="cycle-note">Invoice raised <b>before any paid work begins</b></div>
+      <div class="cycle-note">Invoice raised <b>once the month's work is delivered</b></div>
       <div class="cycle-note"><b>Nothing goes live</b> without approval</div>
       <div class="cycle-note">Replies within <b>48 hours</b>, both ways</div>
     </div>
