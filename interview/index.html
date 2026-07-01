@@ -271,9 +271,70 @@
     .brandgrid{grid-template-columns:1fr}
     .missions{grid-template-columns:1fr}
   }
+
+  /* ── Password gate ── */
+  #pw-gate{
+    position:fixed;inset:0;z-index:9999;background:var(--navy);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:2rem;
+  }
+  #pw-gate img.pw-logo{height:28px;filter:brightness(0) invert(1);opacity:.9;margin-bottom:2.5rem}
+  #pw-gate h2{color:var(--offwhite);font-size:1.1rem;font-weight:600;letter-spacing:.01em;
+    margin-bottom:.4rem;text-align:center}
+  #pw-gate p{color:rgba(255,255,255,.5);font-size:.85rem;margin-bottom:1.75rem;text-align:center}
+  #pw-form{display:flex;flex-direction:column;gap:.75rem;width:100%;max-width:320px}
+  #pw-input{padding:.75rem 1rem;border-radius:8px;border:1.5px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.07);color:var(--offwhite);font-size:1rem;font-family:inherit;
+    outline:none;text-align:center;letter-spacing:.1em;transition:border-color .2s}
+  #pw-input:focus{border-color:var(--gold)}
+  #pw-input.error{border-color:#e05555;animation:shake .3s ease}
+  #pw-submit{padding:.75rem;border-radius:8px;border:none;background:var(--gold);color:var(--navy);
+    font-size:.95rem;font-weight:700;font-family:inherit;cursor:pointer;letter-spacing:.04em;
+    transition:opacity .15s}
+  #pw-submit:hover{opacity:.88}
+  #pw-error{color:#e07070;font-size:.8rem;text-align:center;min-height:1.2em}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 </style>
 </head>
 <body>
+
+<!-- ── Password Gate ── -->
+<div id="pw-gate">
+  <img src="assets/fes-logo.png" alt="Far East Snowsports" class="pw-logo">
+  <h2>Social Media Manager — Interview</h2>
+  <p>Far East Snowsports</p>
+  <form id="pw-form" onsubmit="return checkPassword(event)">
+    <input id="pw-input" type="password" placeholder="Enter access code" autocomplete="off" autofocus>
+    <button id="pw-submit" type="submit">Access Deck</button>
+    <div id="pw-error"></div>
+  </form>
+</div>
+
+<script>
+(function() {
+  if (sessionStorage.getItem('fes_smm_auth') === '1') {
+    document.getElementById('pw-gate').style.display = 'none';
+  }
+})();
+
+function checkPassword(e) {
+  e.preventDefault();
+  const input = document.getElementById('pw-input');
+  const error = document.getElementById('pw-error');
+  if (input.value === 'FES2627') {
+    sessionStorage.setItem('fes_smm_auth', '1');
+    document.getElementById('pw-gate').style.display = 'none';
+  } else {
+    error.textContent = 'Incorrect access code. Please try again.';
+    input.value = '';
+    input.classList.add('error');
+    setTimeout(() => input.classList.remove('error'), 400);
+    input.focus();
+  }
+  return false;
+}
+</script>
+
 <div id="progress"></div>
 <div id="label"></div>
 <div id="counter"></div>
