@@ -268,6 +268,18 @@
     .modal .mdesc{font-size:.95rem}
     .modal .mclose{top:.5rem;right:.7rem;font-size:1.8rem}
     .modal .mgallery{gap:.55rem}
+
+    /* monthly cycle: horizontal timeline → clean vertical list (the
+       %-positioned dots/labels collide badly once the track narrows) */
+    .cycle-wrap{margin-top:1.8rem}
+    .cycle-track{position:static;height:auto;background:none;margin:1rem 0 0;
+      display:flex;flex-direction:column;gap:0}
+    .cycle-range,.cycle-dot{display:none}
+    .cycle-point{position:static;transform:none;max-width:none;width:auto;text-align:left;
+      display:flex;align-items:baseline;gap:.7rem;padding:.6rem 0;border-bottom:1px solid var(--line)}
+    .cycle-point:last-child{border-bottom:none}
+    .cycle-day{flex:0 0 auto;min-width:4.6rem}
+    .cycle-desc{margin-top:0;font-size:.88rem}
   }
   @media(max-width:440px){
     .brandgrid{grid-template-columns:1fr}
@@ -437,9 +449,11 @@
       <div class="cycle-note">Invoice raised <b>once the month's work is delivered</b></div>
       <div class="cycle-note"><b>Nothing goes live</b> without approval</div>
       <div class="cycle-note">Replies within <b>48 hours</b>, both ways</div>
+      <div class="cycle-note">Work lives in <b>FES-owned tools</b> — Canva team, FES Drive — from day one</div>
     </div>
   </div>
   <div class="note" style="max-width:80ch;margin-top:1.6rem"><b style="color:var(--gold-mid)">Seasonal —</b> fuller in winter, lighter over summer. Base fee + Rednote add-on + a KPI bonus; exact figures set individually in the agreement.</div>
+  <div class="note" style="max-width:80ch;margin-top:.5rem">Everything created for FES — designs, source files, drafts — is delivered in <b>native, editable formats</b> into FES-owned storage, not flat exports off a personal account.</div>
 </section>
 
 <!-- 7 · WHAT WE ALREADY DO THAT NEEDS MORE ATTENTION -->
@@ -471,7 +485,7 @@
     <div class="idea"><span class="inum">01</span><div><div class="ititle">Website blog</div></div></div>
     <div class="idea"><span class="inum">02</span><div><div class="ititle">Vlog</div></div></div>
     <div class="idea"><span class="inum">03</span><div><div class="ititle">Storytelling newsletter</div></div></div>
-    <a class="idea idea-link" href="https://lightning-twig-d1b.notion.site/fes-peoples-media" target="_blank" rel="noopener"><span class="inum">04</span><div><div class="ititle">FES People's Media <span class="bview">View ↗</span></div><div class="isub">FES guests, featured</div></div></a>
+    <a class="idea idea-link" href="https://app.notion.com/p/FES-People-Media-Concept-English-922eae6774b643fa93c3e785583ef5f2?source=copy_link" target="_blank" rel="noopener"><span class="inum">04</span><div><div class="ititle">FES People's Media <span class="bview">View ↗</span></div><div class="isub">FES guests, featured</div></div></a>
   </div>
 </section>
 
