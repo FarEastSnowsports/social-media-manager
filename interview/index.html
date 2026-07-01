@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Far East · Social Media Manager — Interview</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4f4f0;      /* warm white base */
+    --paper-2:#fffdf7;    /* lighter card */
+    --navy:#0d1f2d;       /* deep navy — feature bg + headings */
+    --navy-2:#003060;
+    --ink:#23303d;        /* body text on light */
+    --gold:#ab9453;
+    --gold-mid:#c9a227;
+    --yellow:#f5df59;     /* accent on dark only */
+    --steel:#697585;
+    --line:#e2ded5;
+    --offwhite:#fffff9;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-snap-type:y mandatory;scroll-behavior:smooth;background:var(--paper)}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    color:var(--ink);-webkit-font-smoothing:antialiased;
+  }
+
+  .slide{
+    position:relative;min-height:100vh;scroll-snap-align:start;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:11vh 9vw 9vh;background:var(--paper);overflow:hidden;
+  }
+  /* brand logo badge — every page, no text */
+  .slide .brandmark{position:absolute;top:30px;left:9vw;z-index:7;
+    width:38px;height:38px;background:#003060;
+    -webkit-mask:url(assets/fes-logo.png) center/contain no-repeat;
+            mask:url(assets/fes-logo.png) center/contain no-repeat;}
+  .brandmark img{display:none}
+  .feature .brandmark{background:var(--offwhite)}
+
+  .eyebrow{font-size:.78rem;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--gold-mid);font-weight:700;margin-bottom:1.3rem}
+  .feature .eyebrow{color:var(--yellow)}
+  h1{font-weight:800;font-size:clamp(2.8rem,6.6vw,5.8rem);line-height:1.0;
+    letter-spacing:-.03em;color:var(--navy)}
+  h2{font-weight:800;font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.04;
+    letter-spacing:-.025em;color:var(--navy);max-width:20ch}
+  .feature h2,.feature h1{color:var(--offwhite)}
+  .lede{font-size:clamp(1.1rem,1.7vw,1.5rem);line-height:1.5;color:var(--ink);
+    max-width:48ch;font-weight:400;margin-top:1.5rem}
+  .feature .lede{color:rgba(255,255,249,.9)}
+  .big{font-weight:800;font-size:clamp(1.7rem,3.4vw,2.9rem);line-height:1.08;
+    letter-spacing:-.02em;color:var(--navy);margin-top:1.4rem}
+  .big .hl{color:var(--gold-mid)}
+  .feature .big{color:var(--offwhite)} .feature .big .hl{color:var(--yellow)}
+  .note{margin-top:1.6rem;font-size:1.02rem;line-height:1.5;color:var(--steel);
+    max-width:50ch;font-weight:400}
+  .note b{color:var(--gold-mid);font-weight:600}
+  .feature .note{color:rgba(255,255,249,.62)} .feature .note b{color:var(--yellow)}
+
+  /* grouped prompt lists */
+  .group{margin-top:1.7rem}
+  .group .glabel{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold-mid);font-weight:700;margin-bottom:.7rem}
+  .group ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+  .group li{position:relative;padding-left:1.25rem;font-size:clamp(1rem,1.45vw,1.28rem);
+    line-height:1.38;font-weight:400;color:var(--ink)}
+  .group li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;
+    border-radius:50%;background:var(--gold)}
+  .feature .group li{color:rgba(255,255,249,.92)}
+  .feature .group .glabel{color:var(--yellow)}
+  .feature .group li::before{background:var(--yellow)}
+
+  /* two-column blocks */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:1.8rem;max-width:62rem}
+  .trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.2rem;margin-top:1.9rem;max-width:70rem}
+
+  /* channel chips */
+  .chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.3rem;max-width:46rem}
+  .chip{border:1px solid var(--line);background:var(--paper-2);padding:.5rem 1rem;
+    border-radius:999px;font-size:clamp(.9rem,1.25vw,1.08rem);font-weight:500;color:var(--ink)}
+  .chip b{color:var(--gold-mid);font-weight:700}
+
+  /* split layout (content + photo) */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0}
+  .split .col-text{padding:11vh 4vw 9vh 9vw;display:flex;flex-direction:column;justify-content:center}
+  .split .col-media{background-size:cover;background-position:center;min-height:100vh}
+
+  /* hero (full-bleed photo) */
+  .hero{justify-content:flex-end;padding-bottom:11vh}
+  .hero .scrim{position:absolute;inset:0;z-index:0}
+  .hero>*{position:relative;z-index:2}
+  .hero .who{margin-top:2rem;font-size:1.05rem;color:var(--ink);font-weight:500}
+  .hero .who b{color:var(--navy);font-weight:700}
+
+  /* decorative SVG illustrations */
+  .ill{position:absolute;z-index:1;pointer-events:none;opacity:.9}
+  .ill-2{right:7vw;top:50%;transform:translateY(-50%);width:min(26vw,330px)}
+  .ill-4{right:7vw;bottom:12vh;width:min(28vw,360px)}
+  .ill-7{right:7vw;top:50%;transform:translateY(-50%);width:min(24vw,300px)}
+  @media(max-width:880px){.ill{display:none}}
+
+  /* philosophy / missions slide */
+  .ill-mtn{position:absolute;top:7vh;right:6vw;width:min(46vw,620px);z-index:1;pointer-events:none}
+  .missions{display:grid;grid-template-columns:repeat(4,1fr);gap:2.1rem;margin-top:2.3rem;max-width:none;position:relative;z-index:2}
+  .mission .micon{height:34px;margin-bottom:.85rem}
+  .mission .micon svg{height:34px;width:auto;display:block}
+  .mission .mlabel{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-mid);
+    font-weight:700;border-bottom:1px solid var(--line);padding-bottom:.45rem;margin-bottom:.7rem}
+  .mission .mtitle{font-size:clamp(1.05rem,1.5vw,1.4rem);font-weight:800;color:var(--navy);line-height:1.08;margin-bottom:.55rem}
+  .mission p{font-size:.95rem;line-height:1.4;color:var(--steel);font-weight:400}
+  @media(max-width:880px){.missions{grid-template-columns:1fr 1fr;gap:1.4rem}.ill-mtn{display:none}}
+
+  /* ideas grid */
+  .ideas{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:2.3rem;max-width:56rem}
+  .idea{display:flex;gap:.95rem;align-items:flex-start;border:1px solid var(--line);
+    background:var(--paper-2);border-radius:13px;padding:1.15rem 1.4rem}
+  .idea .inum{color:var(--gold-mid);font-weight:800;font-size:.85rem;padding-top:.25rem;font-variant-numeric:tabular-nums}
+  .idea .ititle{font-weight:700;font-size:clamp(1.1rem,1.55vw,1.42rem);color:var(--navy);line-height:1.1}
+  .idea .isub{color:var(--steel);font-size:.9rem;margin-top:.3rem;line-height:1.3}
+  @media(max-width:880px){.ideas{grid-template-columns:1fr}}
+
+  /* brand / venture grid */
+  .brandgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.05rem;margin-top:2.2rem;max-width:66rem}
+  .bcard{border:1px solid var(--line);background:var(--paper-2);border-radius:13px;padding:1.1rem 1.3rem}
+  .bcard .bname{font-weight:800;font-size:clamp(1.05rem,1.45vw,1.34rem);color:var(--navy);line-height:1.1}
+  .bcard .bsub{color:var(--steel);font-size:.85rem;margin-top:.35rem;line-height:1.3}
+  @media(max-width:880px){.brandgrid{grid-template-columns:1fr 1fr}}
+  .bcard.clickable{cursor:pointer;transition:border-color .15s,transform .15s,box-shadow .15s}
+  .bcard.clickable:hover,.bcard.clickable:focus-visible{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 22px rgba(13,31,45,.12);outline:none}
+  .bview{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-mid);font-weight:700;vertical-align:middle;margin-left:.4rem}
+
+  /* inline document link button (e.g. example engagement overview) */
+  .docbtn{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.6rem;align-self:flex-start;
+    background:var(--navy-2);color:var(--offwhite);font-weight:700;font-size:.92rem;letter-spacing:.01em;
+    text-decoration:none;padding:.68rem 1.25rem;border-radius:10px;border:1px solid transparent;
+    transition:background .15s,transform .15s,box-shadow .15s}
+  .docbtn:hover,.docbtn:focus-visible{background:var(--navy);transform:translateY(-2px);
+    box-shadow:0 8px 22px rgba(13,31,45,.18);outline:none}
+
+  /* click-to-open dialogue / modal */
+  html.noscroll{overflow:hidden}
+  .modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:5vh 5vw}
+  .modal[hidden]{display:none}
+  .modal .backdrop{position:absolute;inset:0;background:rgba(13,31,45,.62);backdrop-filter:blur(3px)}
+  .modal .dialog{position:relative;z-index:1;background:var(--paper-2);border-radius:18px;max-width:1040px;width:100%;
+    max-height:90vh;overflow:auto;padding:2.4rem 2.6rem;box-shadow:0 30px 80px rgba(13,31,45,.45)}
+  .modal .mclose{position:absolute;top:.9rem;right:1.2rem;border:none;background:transparent;font-size:2rem;
+    line-height:1;color:var(--steel);cursor:pointer;padding:.2rem .5rem}
+  .modal .mclose:hover{color:var(--navy)}
+  .modal .meyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-mid);font-weight:700;margin-bottom:.5rem}
+  .modal h3{font-weight:800;font-size:clamp(1.7rem,3vw,2.4rem);color:var(--navy);letter-spacing:-.02em;line-height:1.05}
+  .modal .mdesc{font-size:1.02rem;line-height:1.5;color:var(--ink);max-width:62ch;margin-top:.85rem}
+  .modal .mgallery{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.6rem}
+  .modal .mgallery img{width:100%;max-height:330px;object-fit:cover;border-radius:12px;background:var(--paper);display:block}
+  .modal .mgallery img.wide{grid-column:1 / -1;object-fit:contain;max-height:440px}
+  .modal .mgallery img.logo{grid-column:1 / -1;object-fit:contain;background:#fff;max-height:260px;padding:1.6rem}
+  .modal .mgallery.reader{grid-template-columns:1fr;gap:.55rem}
+  .modal .mgallery.reader img{max-height:none;width:100%;object-fit:contain;border-radius:6px;box-shadow:0 2px 10px rgba(13,31,45,.08)}
+  .modal .mlink{display:inline-block;margin-top:1.5rem;background:var(--navy-2);color:var(--offwhite);
+    font-weight:700;font-size:.95rem;text-decoration:none;padding:.7rem 1.3rem;border-radius:10px}
+  .modal .mlink:hover{background:var(--navy)}
+  @media(max-width:760px){.modal .mgallery{grid-template-columns:1fr}}
+
+  /* full-bleed image slide (insert a ready-made spread / photo) */
+  .imgslide{padding:0;align-items:center;justify-content:center;background:var(--paper)}
+  .imgslide img{max-width:96%;max-height:94%;width:auto;height:auto;object-fit:contain;display:block}
+  .imgslide img.crop-head{clip-path:inset(9% 0 4% 0)}
+
+  .sidephoto{position:absolute;right:8vw;top:50%;transform:translateY(-50%);
+    width:min(38vw,540px);height:min(52vh,400px);object-fit:cover;border-radius:16px;
+    box-shadow:0 18px 50px rgba(13,31,45,.18);z-index:1}
+  /* reserve the right zone for the photo so text never runs under it */
+  .has-photo{padding-right:calc(min(38vw,540px) + 12vw)}
+  .has-photo h2{max-width:15ch}
+  @media(max-width:900px){.sidephoto{display:none}.has-photo{padding-right:9vw}}
+
+  .navhint{position:absolute;bottom:3rem;left:9vw;font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--steel);z-index:3}
+
+  /* chrome */
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--gold-mid);z-index:50;transition:width .25s}
+  #label,#counter{position:fixed;bottom:1.3rem;z-index:50;font-size:.7rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--steel);background:rgba(244,244,240,.7);
+    padding:.35rem .65rem;border-radius:6px;backdrop-filter:blur(4px)}
+  #label{left:1.3rem} #counter{right:1.3rem}
+
+  @media(max-width:880px){
+    .duo,.trio{grid-template-columns:1fr;gap:1.6rem}
+    .split{grid-template-columns:1fr}
+    .split .col-media{min-height:38vh}
+    .split .col-text{padding:9vh 8vw 6vh}
+  }
+
+  /* compact content slide */
+  .slide.tight{justify-content:flex-start;padding-top:13vh}
+  .slide.tight h2{font-size:clamp(1.9rem,3.4vw,2.9rem)}
+  .slide.tight .duo{margin-top:1.6rem}
+  .slide.tight .group ul{gap:.5rem}
+  .slide.tight .group li{font-size:clamp(1rem,1.35vw,1.2rem)}
+  .slide.tight .note{margin-top:1.3rem}
+
+  /* ── MOBILE: free-scroll, content-height sections ── */
+  @media(max-width:700px){
+    html{scroll-snap-type:none}
+    .slide{min-height:auto;height:auto;justify-content:flex-start;padding:13vh 7vw 8vh;scroll-snap-align:none}
+    .slide.hero{min-height:100svh;justify-content:flex-end;padding-bottom:13vh}
+    .slide.imgslide{min-height:86svh;justify-content:center;padding:11vh 4vw 8vh}
+    .slide.feature{padding-top:13vh}
+    .lede{font-size:1.08rem}
+    .navhint{display:none}
+    #label{display:none}
+    #counter{bottom:.7rem;right:.7rem;background:rgba(244,244,240,.88)}
+    .brandmark{top:22px}
+    .bview{display:none}
+    .brandgrid{grid-template-columns:1fr 1fr;gap:.7rem}
+    .bcard{padding:.85rem .95rem;border-radius:11px}
+    .bcard .bname{font-size:1.04rem;line-height:1.15}
+    .bcard .bsub{font-size:.78rem}
+    .missions{grid-template-columns:1fr 1fr;gap:1.3rem}
+    .chips{gap:.5rem}
+    .split{min-height:auto}
+    .split .col-media{min-height:32svh}
+    .split .col-text{padding:7vh 7vw 7vh}
+    .imgslide img{max-width:100%;max-height:80svh}
+    .modal{padding:2vh 3vw}
+    .modal .dialog{padding:1.3rem 1.2rem;border-radius:14px;max-height:94svh}
+    .modal h3{font-size:1.4rem}
+    .modal .mdesc{font-size:.95rem}
+    .modal .mclose{top:.5rem;right:.7rem;font-size:1.8rem}
+    .modal .mgallery{gap:.55rem}
+  }
+  @media(max-width:440px){
+    .brandgrid{grid-template-columns:1fr}
+    .missions{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div id="label"></div>
+<div id="counter"></div>
+
+<!-- 1 · COVER (photo hero) -->
+<section class="slide hero" data-label="Welcome"
+  style="background:#0d1f2d url('assets/cover_team.jpg') center/cover">
+  <div class="scrim" style="background:linear-gradient(180deg, rgba(13,31,45,.15) 0%, rgba(13,31,45,0) 30%, rgba(244,244,240,.5) 62%, rgba(244,244,240,.97) 100%)"></div>
+  <div class="brandmark"><img src="assets/fes-logo.png" alt=""></div>
+  <div class="eyebrow">26/27 Season</div>
+  <h1>Social Media<br>Manager</h1>
+  <div class="who"><span id="idate">—</span></div>
+  <div class="navhint">→ or scroll &nbsp;·&nbsp; F for fullscreen</div>
+</section>
+
+<!-- 2 · TODAY (illustration) -->
+<section class="slide has-photo" data-label="Today">
+  <div class="brandmark"><img src="assets/fes-logo.png" alt=""></div>
+  <img class="sidephoto" src="assets/today-life.jpg" alt="">
+  <div class="eyebrow">Today</div>
+  <h2>What these 90 minutes are for</h2>
+  <div class="duo">
+    <div class="group">
+      <div class="glabel">We'll share</div>
+      <ul>
+        <li>Who we are</li>
+        <li>Why we do what we do, and how we do it</li>
+        <li>How we market today — and where the gaps are</li>
+        <li>The role, and where it can go</li>
+      </ul>
+    </div>
+    <div class="group">
+      <div class="glabel">We want to learn</div>
+      <ul>
+        <li>Your story, your ambition, where you're heading</li>
+        <li>How you'd build on our brand — in your own voice</li>
+        <li>How you work with autonomy, and responsibility</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note">Both ways — you're interviewing us too.</div>
+</section>
+
+<!-- 3 · PHILOSOPHY / MISSIONS (Further East spread) -->
+<section class="slide imgslide" data-label="Why we exist">
+  <div class="brandmark"></div>
+  <img src="assets/philosophy.png" alt="Introduction to the philosophy of Far East Snowsports — our four missions">
+</section>
+
+<!-- 4 · FAR EAST TODAY (split photo) -->
+<section class="slide split" data-label="Far East today">
+  <div class="col-text">
+    <div class="brandmark" style="position:absolute"><img src="assets/fes-logo.png" alt=""></div>
+    <div class="eyebrow">Part 1 · Who we are</div>
+    <h2>Far East today</h2>
+    <p class="lede">A boutique snowsports school in Niseko. Premium. Values-driven.</p>
+    <div class="chips">
+      <span class="chip"><b>Instagram</b></span>
+      <span class="chip"><b>Facebook</b></span>
+      <span class="chip"><b>Rednote</b> 小紅書</span>
+      <span class="chip"><b>Mailchimp</b></span>
+      <span class="chip"><b>Further East</b> · Zine Media</span>
+    </div>
+    <div class="note">Paula ran the whole feed on an iPhone — <b>authentic over polished</b>. The question is how we build on it.</div>
+  </div>
+  <div class="col-media" style="background-image:url('assets/fareast-life.jpg')"></div>
+</section>
+
+<!-- 5 · THE ROLE & WHERE IT GROWS (illustration) -->
+<section class="slide" data-label="The role">
+  <div class="brandmark"><img src="assets/fes-logo.png" alt=""></div>
+  <div class="eyebrow">Part 1 · The role</div>
+  <h2>The role — and where it goes</h2>
+  <p class="lede">Social is the core. You own the strategy, with one condition: it aligns with what we believe. Keep the Far East identity, add your own flair, keep it genuine.</p>
+  <div class="big">We are not looking for <span class="hl">Paula 2.0</span>.</div>
+  <div class="group" style="margin-top:1.5rem">
+    <div class="glabel">Where it grows</div>
+    <ul>
+      <li>From the social core — into paid ads, analytics and benchmarking</li>
+      <li>Newsletters, the website blog, the print magazine</li>
+      <li>Company-wide marketing and PR, as results come</li>
+    </ul>
+  </div>
+  <div class="note">Performance pay, with the numbers agreed up front. <b>Autonomy that widens as you earn it.</b></div>
+  <a class="docbtn" href="https://app.notion.com/p/38f96ca7e575811b86c2de3889261757" target="_blank" rel="noopener">📄 See an example engagement overview ↗</a>
+</section>
+
+<!-- · HOW THE ENGAGEMENT WORKS (deliverables + cadence) -->
+<section class="slide tight" data-label="How it works">
+  <div class="brandmark"><img src="assets/fes-logo.png" alt=""></div>
+  <div class="eyebrow">Part 1 · The working arrangement</div>
+  <h2>How the engagement works</h2>
+  <div class="duo" style="max-width:68rem;margin-top:2.2rem">
+    <div class="group">
+      <div class="glabel">What you'd deliver — monthly</div>
+      <ul>
+        <li>Instagram — feed posts + Stories</li>
+        <li>Facebook — regular posts</li>
+        <li>Rednote 小红书 — mirrors Instagram</li>
+        <li>A planned monthly content calendar</li>
+        <li>A monthly performance report</li>
+      </ul>
+    </div>
+    <div class="group">
+      <div class="glabel">How we work together</div>
+      <ul>
+        <li>Schedule next month by the <b>20th</b>; we review in 5 days</li>
+        <li>Nothing goes live without approval</li>
+        <li>Report by the <b>10th</b>; paid on the <b>15th</b></li>
+        <li>Replies within <b>48 hours</b>, both ways</li>
+        <li>Invoice raised before any paid work begins</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note" style="max-width:80ch"><b style="color:var(--gold-mid)">Seasonal —</b> fuller in winter, lighter over summer. Base fee + Rednote add-on + a KPI bonus; exact figures set individually in the agreement.</div>
+</section>
+
+<!-- 7 · WHAT WE ALREADY DO THAT NEEDS MORE ATTENTION -->
+<section class="slide" data-label="Already in motion">
+  <div class="brandmark"></div>
+  <div class="eyebrow">Part 1 · Already in motion</div>
+  <h2>What we already do — that needs more attention</h2>
+  <p class="lede">Far East ventures that deserve more of the spotlight.</p>
+  <div class="brandgrid">
+    <div class="bcard clickable" data-modal="adventure-map" role="button" tabindex="0"><div class="bname">Adventure Map <span class="bview">View ↗</span></div><div class="bsub">On-snow exploration for kids</div></div>
+    <div class="bcard clickable" data-modal="explore-bottle" role="button" tabindex="0"><div class="bname">Explore Bottle <span class="bview">View ↗</span></div><div class="bsub">Our collaboration bottle</div></div>
+    <div class="bcard clickable" data-modal="outscape" role="button" tabindex="0"><div class="bname">OUTSCAPE <span class="bview">View ↗</span></div><div class="bsub">Summer tours, by Far East</div></div>
+    <div class="bcard clickable" data-modal="stoke-sessions" role="button" tabindex="0"><div class="bname">Stoke Sessions <span class="bview">View ↗</span></div><div class="bsub">Ski &amp; SB instructor training</div></div>
+    <div class="bcard clickable" data-modal="stivot" role="button" tabindex="0"><div class="bname">Stivot <span class="bview">View ↗</span></div><div class="bsub">Snowsports school platform</div></div>
+    <div class="bcard clickable" data-modal="ftp" role="button" tabindex="0"><div class="bname">2% FTP <span class="bview">View ↗</span></div><div class="bsub">Two Percent for the Powder</div></div>
+    <div class="bcard clickable" data-modal="further-east" role="button" tabindex="0"><div class="bname">Further East <span class="bview">View ↗</span></div><div class="bsub">Our magazine · Zine Media</div></div>
+    <div class="bcard clickable" data-modal="merch" role="button" tabindex="0"><div class="bname">Merch <span class="bview">View ↗</span></div><div class="bsub">Branded apparel &amp; goods</div></div>
+    <div class="bcard clickable" data-modal="paula-media" role="button" tabindex="0"><div class="bname">Paula's Media <span class="bview">View ↗</span></div><div class="bsub">You Are the Magic</div></div>
+  </div>
+</section>
+
+<!-- 8 · THINGS WE'RE INTERESTED TO DO -->
+<section class="slide" data-label="What's next">
+  <div class="brandmark"></div>
+  <div class="eyebrow">Part 1 · What we'd love to build</div>
+  <h2>Things we're interested to do</h2>
+  <p class="lede">Directions we want to take our content — and where you'd lead.</p>
+  <div class="ideas">
+    <div class="idea"><span class="inum">01</span><div><div class="ititle">Website blog</div></div></div>
+    <div class="idea"><span class="inum">02</span><div><div class="ititle">Vlog</div></div></div>
+    <div class="idea"><span class="inum">03</span><div><div class="ititle">Storytelling newsletter</div></div></div>
+    <div class="idea"><span class="inum">04</span><div><div class="ititle">FES People's Media</div><div class="isub">FES guests, featured</div></div></div>
+  </div>
+</section>
+
+<!-- 8 · YOUR STORY & AMBITION (split photo) — Blocks 1+2 -->
+<section class="slide split" data-label="Your story">
+  <div class="col-media" style="background-image:url('assets/solo_joy.jpg')"></div>
+  <div class="col-text">
+    <div class="brandmark" style="position:absolute"><img src="assets/fes-logo.png" alt=""></div>
+    <div class="eyebrow">Part 2 · Your story</div>
+    <h2>Where you're heading</h2>
+    <div class="group">
+      <div class="glabel">Logistics</div>
+      <ul>
+        <li>House</li>
+        <li>Transportation</li>
+        <li>Realistic income</li>
+        <li>Plan for the future</li>
+      </ul>
+    </div>
+    <div class="group">
+      <div class="glabel">Ambition</div>
+      <ul>
+        <li>Where you see yourself in five years — lifestyle, personal goals, career</li>
+        <li>A milestone, or something you take as far as it goes?</li>
+        <li>How Far East fits into your growth</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · SHOW THE BRAND, NOT YOURSELF (dark feature) — Block 4 + breadth -->
+<section class="slide feature" data-label="Brand fit"
+  style="background:radial-gradient(120% 100% at 80% 0%, #14304a 0%, #0d1f2d 60%)">
+  <div class="brandmark"><img src="assets/fes-logo.png" alt=""></div>
+  <div class="eyebrow">Part 2 · Brand fit</div>
+  <h1 style="font-size:clamp(2.6rem,5.6vw,4.8rem);max-width:16ch">Show the <span style="color:var(--yellow)">brand</span>.</h1>
+  <p class="lede" style="max-width:44ch">When you post, whose face is it — yours, or Far East's? A great social manager builds the brand from behind the scenes.</p>
+  <div class="duo" style="max-width:60rem">
+    <div class="group">
+      <div class="glabel">Brand</div>
+      <ul>
+        <li>What's your strategy to deliver our message to the right audience — in a way they actually receive it?</li>
+        <li>What would you keep about how we show up?</li>
+        <li>And what would be unmistakably <i>yours</i>?</li>
+      </ul>
+    </div>
+    <div class="group">
+      <div class="glabel">Beyond the grid</div>
+      <ul>
+        <li>Magazine, strategy, paid ads, newsletters, the blog</li>
+        <li>Where are you strong — and what would you learn?</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · HOW YOU'D WORK WITH ME (illustration) — Blocks 5+6+7 -->
+<section class="slide" data-label="Working together">
+  <div class="brandmark"><img src="assets/fes-logo.png" alt=""></div>
+  <div class="eyebrow">Part 2 · How we'd work</div>
+  <h2>How you'd work</h2>
+  <p class="lede" style="max-width:42ch">You'd work directly, with real autonomy — and real pressure to grow.</p>
+  <div class="trio">
+    <div class="group" style="margin-top:.4rem">
+      <div class="glabel">Working together</div>
+      <ul><li>When I ask why you made a choice, I'm aligning — not attacking. Walk me through it, without defending it.</li></ul>
+    </div>
+    <div class="group" style="margin-top:.4rem">
+      <div class="glabel">Under pressure</div>
+      <ul><li>A time you ran something solo, no one to ask. Did you create options — or wait for direction?</li></ul>
+    </div>
+    <div class="group" style="margin-top:.4rem">
+      <div class="glabel">The proof</div>
+      <ul><li>One account you grew from a quiet start — real numbers. Our voice as you read it, and one thing you'd never post. The one number to judge you by.</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · OVER TO YOU / NEXT STEPS (photo hero close) -->
+<section class="slide hero" data-label="Over to you"
+  style="background:#0d1f2d url('assets/close_group.jpg') center/cover">
+  <div class="scrim" style="background:linear-gradient(180deg, rgba(13,31,45,.1) 0%, rgba(244,244,240,.45) 55%, rgba(244,244,240,.97) 100%)"></div>
+  <div class="brandmark"><img src="assets/fes-logo.png" alt=""></div>
+  <div class="eyebrow">Over to you</div>
+  <h2>What do you want to ask us?</h2>
+  <p class="lede" style="max-width:42ch">This goes both ways. What do you want to know more of to have a clear picture?</p>
+  <div class="note" style="color:var(--ink)"><b style="color:var(--gold-mid)">Moving forward —</b> we speak with your references and review across everyone we're meeting over the next week or two, then come back to you with a timeline. Are you open to a second chat? 🐾</div>
+</section>
+
+<!-- click-to-open dialogue -->
+<div id="modal" class="modal" hidden>
+  <div class="backdrop" data-close></div>
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <button class="mclose" data-close aria-label="Close">×</button>
+    <div class="meyebrow" id="m-eyebrow"></div>
+    <h3 id="m-title"></h3>
+    <p class="mdesc" id="m-desc"></p>
+    <div class="mgallery" id="m-gallery"></div>
+    <div id="m-link"></div>
+  </div>
+</div>
+
+<script>
+  /* ✏️ EDIT THESE TWO LINES BEFORE EACH INTERVIEW ───────────────── */
+  const INTERVIEW_DATE = "30 June 2026";
+  /* ──────────────────────────────────────────────────────────────── */
+  document.getElementById('idate').textContent = INTERVIEW_DATE;
+
+  const slides=[...document.querySelectorAll('.slide')], total=slides.length;
+  const label=document.getElementById('label'), counter=document.getElementById('counter'), bar=document.getElementById('progress');
+  const pad=n=>String(n).padStart(2,'0');
+  const cur=()=>{const m=innerHeight/2;let i=0;slides.forEach((s,k)=>{if(s.getBoundingClientRect().top<=m)i=k});return i};
+  const paint=()=>{const i=cur();label.textContent=slides[i].dataset.label||'';counter.textContent=pad(i+1)+' / '+pad(total);bar.style.width=(i/(total-1))*100+'%'};
+  const go=i=>{i=Math.max(0,Math.min(total-1,i));slides[i].scrollIntoView({behavior:'smooth'})};
+  addEventListener('scroll',()=>requestAnimationFrame(paint),{passive:true});
+  addEventListener('resize',paint);
+  /* ── click-to-open dialogues ── */
+  const EB='Already in motion · by Far East';
+  const MODALS={
+    'adventure-map':{eyebrow:EB,title:'Adventure Map',
+      desc:"A gamified exploration map of the Niseko ski area — collect level-up stickers as you discover spots on the mountain. Played at partner cafés, hotels and lodges across the region.",
+      images:[{src:'assets/am-map.jpg',cls:'wide'},{src:'assets/am-2.jpg'},{src:'assets/am-board.jpg'},{src:'assets/am-1.jpg'},{src:'assets/am-3.jpg'},{src:'assets/am-4.jpg'}]},
+    'explore-bottle':{eyebrow:EB,title:'Explore Bottle',
+      desc:"A refillable bottle built for the mountain and beyond — a Far East collaboration.",
+      images:[{src:'assets/bottle-1.jpg',cls:'wide'},{src:'assets/bottle-2.jpg'},{src:'assets/bottle-3.png'}]},
+    'outscape':{eyebrow:EB,title:'OUTSCAPE',
+      desc:"Summer in Niseko, guided — backcountry strolls and hikes that show the mountains in green.",
+      images:[{src:'assets/outscape-1.png',cls:'wide'},{src:'assets/outscape-2.png'},{src:'assets/outscape-3.png'},{src:'assets/outscape-4.png'},{src:'assets/outscape-5.png'}]},
+    'stoke-sessions':{eyebrow:EB,title:'Stoke Sessions',
+      desc:"Ski & snowboard instructor training — developing the next wave of instructors.",
+      images:[{src:'assets/stoke-logo.png',cls:'logo'}],
+      link:{label:'View on Instagram',url:'https://www.instagram.com/stoke.sessions/?hl=en'}},
+    'stivot':{eyebrow:EB,title:'Stivot',
+      desc:"The platform that runs modern snowsports schools — built by Far East.",
+      images:[{src:'assets/stivot-3.png',cls:'wide'},{src:'assets/stivot-1.png'},{src:'assets/stivot-2.png'}]},
+    'ftp':{eyebrow:EB,title:'2% FTP — Two Percent for the Powder',
+      desc:"A share of what we make goes back to protecting winters and the community that make this life possible.",
+      images:[{src:'assets/ftp-logo.png',cls:'logo'}],
+      link:{label:'Read about 2% FTP',url:'https://fareastsnowsports.com/en/tpftp/'}},
+    'further-east':{eyebrow:EB,title:'Further East — 2025-26 · Issue No. 2',
+      desc:"Our magazine and zine — long-form storytelling from Far East. Scroll through the full issue.",
+      reader:{dir:'assets/zine',count:8}},
+    'paula-media':{eyebrow:EB,title:"Paula's Media — You Are the Magic",
+      desc:"A special edition about the people of Far East Snowsports — created by Paula. Scroll through the full piece.",
+      reader:{dir:'assets/paula',count:14}},
+    'merch':{eyebrow:EB,title:'Merch',
+      desc:"Branded apparel and goods — Far East, worn and carried off the mountain.",
+      images:[{src:'assets/merch-1.jpg',cls:'wide'},{src:'assets/merch-2.jpg'},{src:'assets/merch-3.jpg'},{src:'assets/merch-4.jpg'},{src:'assets/merch-5.jpg'},{src:'assets/merch-6.jpg'}]}
+  };
+  const modal=document.getElementById('modal');
+  function openModal(key){
+    const d=MODALS[key]; if(!d) return;
+    document.getElementById('m-eyebrow').textContent=d.eyebrow||'';
+    document.getElementById('m-title').textContent=d.title||'';
+    document.getElementById('m-desc').textContent=d.desc||'';
+    const g=document.getElementById('m-gallery'); g.innerHTML='';
+    g.className='mgallery'+(d.reader?' reader':'');
+    let imgs=d.images||[];
+    if(d.reader){imgs=Array.from({length:d.reader.count},(_,i)=>({src:d.reader.dir+'/p'+String(i+1).padStart(2,'0')+'.jpg'}));}
+    imgs.forEach(im=>{
+      const el=document.createElement('img');
+      el.src=im.src; if(im.cls) el.className=im.cls; el.loading='lazy';
+      el.onerror=()=>el.remove();
+      g.appendChild(el);
+    });
+    const lk=document.getElementById('m-link'); lk.innerHTML='';
+    if(d.link){const a=document.createElement('a');a.className='mlink';a.href=d.link.url;a.target='_blank';a.rel='noopener';a.textContent=d.link.label+' ↗';lk.appendChild(a);}
+    modal.hidden=false;
+    document.documentElement.classList.add('noscroll');
+    modal.querySelector('.dialog').scrollTop=0;
+  }
+  function closeModal(){modal.hidden=true;document.documentElement.classList.remove('noscroll')}
+  document.querySelectorAll('[data-modal]').forEach(el=>{
+    el.addEventListener('click',()=>openModal(el.dataset.modal));
+    el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(el.dataset.modal)}});
+  });
+  modal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeModal));
+
+  addEventListener('keydown',e=>{
+    if(!modal.hidden){ if(e.key==='Escape') closeModal(); return; }
+    if(['ArrowRight','ArrowDown',' ','PageDown'].includes(e.key)){e.preventDefault();go(cur()+1)}
+    else if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();go(cur()-1)}
+    else if(e.key==='Home'){e.preventDefault();go(0)}
+    else if(e.key==='End'){e.preventDefault();go(total-1)}
+    else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}
+  });
+  paint();
+</script>
+</body>
+</html>
